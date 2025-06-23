@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+	<title>Recaptcha</title>
+	<script src="https://google.com/recaptcha/api.js"></script>
+</head>
+<body>
+	<form id="recaptcha-form">
+		<div 
+			class="g-recaptcha"
+			data-sitekey = "6LccY2orAAAAAGnYsjLd3G6V_tKKPwfk2vVUjQmX"
+			data-callback="onSubmit"
+					
+					>
+			
+		</div>
+	</form>
+
+<script>
+	function onSubmit(token)
+	{
+		if (window.FlutterWebViewPlugin)
+		{
+			FlutterWebViewPlugin.postMessage(token);
+			
+		} elseif (window.TokenChannel)
+		{
+			TokenChannel.postMessage(token);
+		} else {
+			console.log('Token: ', token); 
+		}
+
+
+	}
+	
+</script>
+
+</body>
+
