@@ -2,6 +2,7 @@
 <head>
 	
 	<title>Recaptcha</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
 	<script src="https://google.com/recaptcha/api.js"></script>
 </head>
 <body>
@@ -15,23 +16,29 @@
 		</div>
 	</form>
 
-<script>
-	function onSubmit(token)
-	{
-		if (window.FlutterWebViewPlugin)
+	<!-- The js section-->
+	<script>
+		
+		function onSubmit(token)
 		{
-			FlutterWebViewPlugin.postMessage(token);
-			alert("cool!")
-		} elseif (window.TokenChannel)
-		{
-			TokenChannel.postMessage(token);
-			alert("Error!")
-		} else {
-			console.log('Token: ', token); 
+			if (window.FlutterWebViewPlugin)
+			{
+				FlutterWebViewPlugin.postMessage(token);
+				alert("cool!")
+			}
+			
+			elseif (window.TokenChannel)
+			{
+				TokenChannel.postMessage(token);
+				alert("Error!")
+			}
+			
+			else {
+				console.log('Token: ', token); 
+			}
 		}
-	}
-	
-</script>
+		
+	</script>
 
 </body>
 
