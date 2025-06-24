@@ -21,15 +21,14 @@
 		if (window.FlutterWebViewPlugin)
 		{
 			FlutterWebViewPlugin.postMessage(token);
-			
+			alert("cool!")
 		} elseif (window.TokenChannel)
 		{
 			TokenChannel.postMessage(token);
+			alert("Error!")
 		} else {
 			console.log('Token: ', token); 
 		}
-
-
 	}
 	
 </script>
