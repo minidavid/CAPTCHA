@@ -6,6 +6,8 @@
 	<script src="https://google.com/recaptcha/api.js"></script>
 </head>
 <body>
+	
+
 	<div class="container">
 		<div>
 			<P>Solve this captcha please :)</P>
@@ -26,16 +28,10 @@
 		
 		function onSubmit(token)
 		{
-			if (window.FlutterWebViewPlugin)
-			{
-				FlutterWebViewPlugin.postMessage(token);
-				alert("cool!")
-			}
-			
-			elseif (window.TokenChannel)
+			if (window.TokenChannel)
 			{
 				TokenChannel.postMessage(token);
-				alert("Error!")
+				alert("Token sent to flutter!");
 			}
 			
 			else {
