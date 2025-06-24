@@ -1,4 +1,49 @@
 body
 {
+
+    margin-bottom: 2em;
+    margin-top: 2em;
+    vertical-align:middle;
+    
+}
+
+form
+{
+    margin: 0 auto;
+    width: 250px;
+    margin-top: 20px;
+}
+
+P
+{
+
+    color: white;
+    margin: 0 auto;
+    margin-top: 25px;
+    padding: 10px;
+    text-align: center;
+    text-shadow: 0 0 10px #fff, 0 0 50px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 40px #e60073;
+
+    animation-name: backgroundAnimation;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+}
+
+.container
+{
+    border: 1px;
+
     background-color: black;
+}
+
+@keyframes backgroundAnimation
+{
+    from {
+        background-color: white;
+        text-shadow: 0 0 10px #ffffff;
+    }
+    to {background-color: black;
+        text-shadow: 0 0 10px #fff, 0 0 50px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 40px #e60073;
+    
+    }
 }
